@@ -36,9 +36,13 @@
 @synthesize doneBarButton = _doneBarButton;
 @synthesize fixedSpaceBarButton = _fixedSpaceBarButton;
 
-+(void)initialize
+-(void)initialize
 {
-    [super initialize];
+
+    [self sizeToFit];
+    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;// | UIViewAutoresizingFlexibleHeight;
+    self.translucent = YES;
+    self.barTintColor = nil;
 
     IQToolbar *appearanceProxy = [self appearance];
     
@@ -51,13 +55,6 @@
         [appearanceProxy setBackgroundImage:nil forToolbarPosition:toolbarPosition barMetrics:UIBarMetricsDefault];
         [appearanceProxy setShadowImage:nil forToolbarPosition:toolbarPosition];
     }
-}
-
--(void)initialize
-{
-    [self sizeToFit];
-    self.autoresizingMask = UIViewAutoresizingFlexibleWidth;// | UIViewAutoresizingFlexibleHeight;
-    self.translucent = YES;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame

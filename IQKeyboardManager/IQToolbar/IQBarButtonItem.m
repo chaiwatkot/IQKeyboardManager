@@ -27,9 +27,8 @@
 
 @implementation IQBarButtonItem
 
-+(void)initialize
+-(void)initialize
 {
-    [super initialize];
 
     IQBarButtonItem *appearanceProxy = [self appearance];
 
@@ -49,6 +48,32 @@
     [appearanceProxy setBackgroundVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];
     [appearanceProxy setBackButtonBackgroundVerticalPositionAdjustment:0 forBarMetrics:UIBarMetricsDefault];
 }
+
+- (instancetype)init {
+
+    self = [super init];
+
+    if (self)
+    {
+        [self initialize];
+    }
+
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder {
+
+    self = [super initWithCoder: coder];
+
+    if (self)
+    {
+        [self initialize];
+    }
+ 
+
+    return self;
+ }
+
 
 -(void)setTintColor:(UIColor *)tintColor
 {
