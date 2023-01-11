@@ -43,8 +43,6 @@
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;// | UIViewAutoresizingFlexibleHeight;
     self.translucent = YES;
     self.barTintColor = nil;
-
-    IQToolbar *appearanceProxy = [self appearance];
     
     NSArray <NSNumber*> *positions = @[@(UIBarPositionAny),@(UIBarPositionBottom),@(UIBarPositionTop),@(UIBarPositionTopAttached)];
 
@@ -52,8 +50,8 @@
     {
         UIToolbarPosition toolbarPosition = [position unsignedIntegerValue];
 
-        [appearanceProxy setBackgroundImage:nil forToolbarPosition:toolbarPosition barMetrics:UIBarMetricsDefault];
-        [appearanceProxy setShadowImage:nil forToolbarPosition:toolbarPosition];
+        [self setBackgroundImage:nil forToolbarPosition:toolbarPosition barMetrics:UIBarMetricsDefault];
+        [self setShadowImage:nil forToolbarPosition:toolbarPosition];
     }
 }
 
